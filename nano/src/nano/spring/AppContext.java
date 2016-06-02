@@ -1,6 +1,7 @@
 package nano.spring;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AppContext {
 	private Map<String, Object> property = new HashMap<String, Object>();

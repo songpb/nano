@@ -4,7 +4,6 @@
  */
 package nano.web.framework;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
 import nano.utils.ConfigUtil;

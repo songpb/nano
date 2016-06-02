@@ -1,6 +1,5 @@
 package nano.demo.servlet;
 import java.io.IOException;
-import java.util.Timer;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

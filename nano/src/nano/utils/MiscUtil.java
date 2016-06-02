@@ -1,10 +1,9 @@
 package nano.utils;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
