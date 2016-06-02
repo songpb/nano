@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="ProcBuilder" class="nano.web.framework.ProcBuilder" >
+		<property name="cmds">
+		  
+			<map>
+				<entry key="demo">
+					<ref bean="DemoProc"/>
+				</entry>
+				
+			</map>
+		
+		</property>		
+	</bean>
+	<bean id="BaseProc" class="nano.web.framework.BaseProcWithLog" >
+	</bean>
+	<bean id="DemoProc" class="nano.demo.processor.DemoProc"  parent="BaseProc">
+	</bean>
+	
+	
+</beans>

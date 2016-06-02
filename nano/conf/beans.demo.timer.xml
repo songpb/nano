@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="DemoTimerTask" class="nano.demo.timer.DemoTimerTask">
+	</bean>
+	
+	<bean id="DemoTimerInvokingTask" class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+		<property name="targetObject" ref="DemoTimerTask"/>
+		<property name="targetMethod" value="run"/>
+	</bean>
+	
+	<bean id="DemoTimerTaskTimerTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="delay" value="0" />
+		<property name="period" value="3000" />
+		<property name="timerTask">
+			<ref bean="DemoTimerInvokingTask"/>
+		</property>
+	</bean>  
+	
+	
+	<bean class="org.springframework.scheduling.timer.TimerFactoryBean">     
+		<property name="scheduledTimerTasks">     
+   			<list>
+   			    <ref bean="DemoTimerTaskTimerTask"/>
+   			</list>     
+		</property>     
+	</bean>     
+	
+</beans>
