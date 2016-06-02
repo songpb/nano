@@ -4,8 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 
 public class NanoException  extends Exception {
 	
-	public static final int INTERNAL = -1;
-	
 	private int exceptionId;
 	private String info;
 	
