@@ -79,9 +79,11 @@ public abstract class AbstractServlet extends HttpServlet {
 	}
 
 	protected void setup(SpringContainer container) {
-		procBuilder = (IProcBuilder) container.getBean("ProcBuilder");
-		handlerBuilder = (HandlerBuilder) container.getBean("HandlerBuilder");
-
+		if(container!=null){
+			procBuilder = (IProcBuilder) container.getBean("ProcBuilder");
+			handlerBuilder = (HandlerBuilder) container.getBean("HandlerBuilder");
+		}
+		
 		String config = "setting.nano.properties";
 		log.info("init servlet using config:" + config);
 		Properties prop = ConfigUtil.getProperties(config);
