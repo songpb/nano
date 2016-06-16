@@ -14,9 +14,14 @@ public class NanoException  extends Exception {
 		return obj.toJSONString();
 	}
 	
-	public NanoException(byte exceptionId,String info) {
+	public NanoException(int exceptionId,String info) {
 		super(info);
 		this.info = info;
+		this.exceptionId = exceptionId;
+	}
+	
+	public NanoException(int exceptionId) {
+		super("");
 		this.exceptionId = exceptionId;
 	}
 		
